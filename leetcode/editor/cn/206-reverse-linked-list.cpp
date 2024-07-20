@@ -47,43 +47,43 @@ using namespace std;
 //
 // Related Topics 递归 链表 👍 3625 👎 0
 
-namespace solution206{
+namespace solution206 {
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-class Solution {
-public:
-    ListNode* reverseList(ListNode* head) {
-        if (head == nullptr) {
-            return nullptr;
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode() : val(0), next(nullptr) {}
+     *     ListNode(int x) : val(x), next(nullptr) {}
+     *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+     * };
+     */
+    class Solution {
+    public:
+        ListNode *reverseList(ListNode *head) {
+            if (head == nullptr) {
+                return nullptr;
+            }
+
+            auto *res = new ListNode();
+            auto tmp = head;
+            res->val = tmp->val;
+            res->next = nullptr;
+
+            while (tmp->next) {
+                tmp = tmp->next;
+                auto *tt = new ListNode();
+                tt->val = tmp->val;
+                tt->next = res;
+                res = tt;
+            }
+
+            return res;
         }
+    };
 
-        auto *res = new ListNode();
-        auto tmp = head;
-        res->val = tmp->val;
-        res->next = nullptr;
-
-        while (tmp->next) {
-            tmp = tmp->next;
-            auto *tt = new ListNode();
-            tt->val = tmp->val;
-            tt->next = res;
-            res = tt;
-        }
-
-        return res;
-    }
-};
-//leetcode submit region end(Prohibit modification and deletion)
-
+    //leetcode submit region end(Prohibit modification and deletion)
 }
 
 using namespace solution206;
