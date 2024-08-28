@@ -54,9 +54,44 @@ namespace solution437 {
  */
 class Solution {
 public:
-    int pathSum(TreeNode* root, int targetSum) {
-
+    void dfs(TreeNode* root, long long sum) {
+        if (root == nullptr) return;
+        sum += root->val;
+        if (map_.count(sum - targetSum_)) {
+            cnt += map_[sum - targetSum_];
+        }
+        ++map_[sum];
+        dfs(root->left, sum);
+        dfs(root->right, sum);
+        --map_[sum];
     }
+
+    void dfs(TreeNode* root) {
+        if (root == nullptr) return;
+        sum += root->val;
+        if (map_.count(sum - targetSum_)) {
+            cnt += map_[sum - targetSum_];
+        }
+        ++map_[sum];
+        dfs(root->left, sum);
+        dfs(root->right, sum);
+        --map_[sum];
+        sum -= root->val;
+    }
+
+    int pathSum(TreeNode* root, int targetSum) {
+        if (root == nullptr) return 0;
+        map_[0] = 1;
+        this->targetSum_ = targetSum;
+        dfs(root);
+        return cnt;
+    }
+
+private:
+    long long sum = 0;
+    long long cnt = 0;
+    long long targetSum_ = 0;
+    std::unordered_map<long long, long long> map_;
 };
 //leetcode submit region end(Prohibit modification and deletion)
 
