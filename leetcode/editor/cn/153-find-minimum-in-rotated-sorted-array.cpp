@@ -63,7 +63,14 @@ namespace solution153 {
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-
+        int n = nums.size() - 1;
+        int l = 0, r = n;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (nums[mid] < nums[n]) r = mid;
+            else l = mid + 1;
+        }
+        return nums[l];
     }
 };
 //leetcode submit region end(Prohibit modification and deletion)
