@@ -93,71 +93,71 @@ using namespace std;
 //
 // Related Topics 哈希表 链表 双指针 👍 2465 👎 0
 
-namespace solution160{
+namespace solution160 {
     //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution {
-public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        if (headA == nullptr || headB == nullptr) {
-            return nullptr;
+    /**
+     * Definition for singly-linked list.
+     * struct ListNode {
+     *     int val;
+     *     ListNode *next;
+     *     ListNode(int x) : val(x), next(NULL) {}
+     * };
+     */
+    class Solution {
+    public:
+        ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+            if (headA == nullptr || headB == nullptr) {
+                return nullptr;
+            }
+
+            auto tmp_A = headA;
+            auto tmp_B = headB;
+
+            while (tmp_A != tmp_B) {
+                tmp_A = tmp_A ? tmp_A->next : headB;
+                tmp_B = tmp_B ? tmp_B->next : headA;
+            }
+
+            return tmp_A;
+
+            // int a_length = 0;
+            // int b_length = 0;
+            //
+            // while (tmp_A) {
+            //     ++a_length;
+            //     tmp_A = tmp_A->next;
+            // }
+            // while (tmp_B) {
+            //     ++b_length;
+            //     tmp_B = tmp_B->next;
+            // }
+            //
+            // tmp_A = headA;
+            // tmp_B = headB;
+            //
+            // ListNode *tmp;
+            // if (a_length > b_length) {
+            // } else {
+            //     std::swap(tmp_A, tmp_B);
+            // }
+            //
+            // int step = abs(a_length - b_length);
+            // while (step--) {
+            //     tmp_A = tmp_A->next;
+            // }
+            //
+            // while (tmp_A && tmp_B) {
+            //     if (tmp_A == tmp_B) {
+            //         break;
+            //     }
+            //     tmp_A = tmp_A->next;
+            //     tmp_B = tmp_B->next;
+            // }
+            // return tmp_A;
         }
+    };
 
-        auto tmp_A = headA;
-        auto tmp_B = headB;
-
-        while (tmp_A != tmp_B) {
-            tmp_A = tmp_A ? tmp_A->next : headB;
-            tmp_B = tmp_B ? tmp_B->next : headA;
-        }
-
-        return tmp_A;
-
-        // int a_length = 0;
-        // int b_length = 0;
-        //
-        // while (tmp_A) {
-        //     ++a_length;
-        //     tmp_A = tmp_A->next;
-        // }
-        // while (tmp_B) {
-        //     ++b_length;
-        //     tmp_B = tmp_B->next;
-        // }
-        //
-        // tmp_A = headA;
-        // tmp_B = headB;
-        //
-        // ListNode *tmp;
-        // if (a_length > b_length) {
-        // } else {
-        //     std::swap(tmp_A, tmp_B);
-        // }
-        //
-        // int step = abs(a_length - b_length);
-        // while (step--) {
-        //     tmp_A = tmp_A->next;
-        // }
-        //
-        // while (tmp_A && tmp_B) {
-        //     if (tmp_A == tmp_B) {
-        //         break;
-        //     }
-        //     tmp_A = tmp_A->next;
-        //     tmp_B = tmp_B->next;
-        // }
-        // return tmp_A;
-    }
-};
-//leetcode submit region end(Prohibit modification and deletion)
-
+    //leetcode submit region end(Prohibit modification and deletion)
 }
 
 using namespace solution160;
