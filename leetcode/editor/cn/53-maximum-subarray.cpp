@@ -51,13 +51,13 @@ namespace solution53{
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int dp[nums.size() + 1];
-        int max_ans = 0;
+        int dp = 0;
+        int res = INT32_MIN;
         for (int i = 1; i <= nums.size(); ++i) {
-            dp[i] = max(dp[i - 1] + nums[i], nums[i]);
-            max_ans = max(max_ans, dp[i]);
+            dp = max(dp + nums[i - 1], nums[i - 1]);
+            res = max(dp, res);
         }
-        return max_ans;
+        return res;
     }
 };
 //leetcode submit region end(Prohibit modification and deletion)
