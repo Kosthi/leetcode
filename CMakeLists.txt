@@ -54,3 +54,4 @@ add_executable(4-median-of-two-sorted-arrays leetcode/editor/cn/4-median-of-two-
 add_executable(20-valid-parentheses leetcode/editor/cn/20-valid-parentheses.cpp)
 add_executable(155-min-stack leetcode/editor/cn/155-min-stack.cpp)
 add_executable(287-find-the-duplicate-number leetcode/editor/cn/287-find-the-duplicate-number.cpp)
+add_executable(9-palindrome-number leetcode/editor/cn/9-palindrome-number.cpp)
