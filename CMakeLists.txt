@@ -59,3 +59,4 @@ add_executable(14-longest-common-prefix leetcode/editor/cn/14-longest-common-pre
 add_executable(59-spiral-matrix-ii leetcode/editor/cn/59-spiral-matrix-ii.cpp)
 add_executable(54-spiral-matrix leetcode/editor/cn/54-spiral-matrix.cpp)
 add_executable(885-spiral-matrix-iii leetcode/editor/cn/885-spiral-matrix-iii.cpp)
+add_executable(2326-spiral-matrix-iv leetcode/editor/cn/2326-spiral-matrix-iv.cpp)
