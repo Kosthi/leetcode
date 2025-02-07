@@ -57,3 +57,4 @@ add_executable(287-find-the-duplicate-number leetcode/editor/cn/287-find-the-dup
 add_executable(9-palindrome-number leetcode/editor/cn/9-palindrome-number.cpp)
 add_executable(14-longest-common-prefix leetcode/editor/cn/14-longest-common-prefix.cpp)
 add_executable(59-spiral-matrix-ii leetcode/editor/cn/59-spiral-matrix-ii.cpp)
+add_executable(54-spiral-matrix leetcode/editor/cn/54-spiral-matrix.cpp)
