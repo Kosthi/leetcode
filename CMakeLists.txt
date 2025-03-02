@@ -65,3 +65,5 @@ add_executable(88-merge-sorted-array leetcode/editor/cn/88-merge-sorted-array.cp
 add_executable(27-remove-element leetcode/editor/cn/27-remove-element.cpp)
 add_executable(26-remove-duplicates-from-sorted-array leetcode/editor/cn/26-remove-duplicates-from-sorted-array.cpp)
 add_executable(80-remove-duplicates-from-sorted-array-ii leetcode/editor/cn/80-remove-duplicates-from-sorted-array-ii.cpp)
+add_executable(169-majority-element leetcode/editor/cn/169-majority-element.cpp)
+add_executable(300-longest-increasing-subsequence leetcode/editor/cn/300-longest-increasing-subsequence.cpp)
